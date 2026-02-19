@@ -5,4 +5,10 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/rr7_docusaurus/",
+  server: {
+    // rewrite requests so that local dev works with /rr7_docusaurus/ prefix
+    fs: {
+      strict: false,
+    },
+  },
 });

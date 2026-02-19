@@ -28,24 +28,26 @@ const SearchParamPage = () => {
     setSearch(search);
   };
   return (
-    <div>
-      Parent
+    <div style={{ display: "flex", gap: 20, flexDirection: "column" }}>
+      <div style={{ background: "gray" }}>
+        Parent
+        <div className="flex gap-5">
+          <button className="border" onClick={() => handler("sup")}>
+            Set hello
+          </button>
+          <button className="border" onClick={() => handler(Math.random().toString())}>
+            Set random
+          </button>
+          <button className="border" onClick={() => setX(Math.random())}>
+            Re-render parent
+          </button>
+          <button className="border" onClick={handleFetcherLoad}>
+            fetcher.load()
+          </button>
+        </div>
+      </div>
       <Child1 />
       <Child2 searchParams={search} />
-      <div className="flex gap-5">
-        <button className="border" onClick={() => handler("sup")}>
-          Set hello
-        </button>
-        <button className="border" onClick={() => handler(Math.random().toString())}>
-          Set random
-        </button>
-        <button className="border" onClick={() => setX(Math.random())}>
-          Re-render parent
-        </button>
-        <button className="border" onClick={handleFetcherLoad}>
-          fetcher.load()
-        </button>
-      </div>
     </div>
   );
 };
