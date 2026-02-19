@@ -27,6 +27,10 @@ const SearchParamPage = () => {
     search.set("hello", str);
     setSearch(search);
   };
+
+  const mutateSearchObj = () => {
+    search.set("lol", "hahahahah");
+  };
   return (
     <div style={{ display: "flex", gap: 20, flexDirection: "column" }}>
       <div style={{ background: "gray" }}>
@@ -43,6 +47,9 @@ const SearchParamPage = () => {
           </button>
           <button className="border" onClick={handleFetcherLoad}>
             fetcher.load()
+          </button>
+          <button className="border" onClick={mutateSearchObj}>
+            just mutate the search param obj
           </button>
         </div>
       </div>
