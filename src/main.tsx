@@ -3,17 +3,22 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import SearchParamPage from "./pages/search-params/page";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <div>Hello World</div>,
+    },
+    {
+      path: "search-params",
+      element: <SearchParamPage />,
+      loader: SearchParamPage.loader,
+    },
+  ],
   {
-    path: "/",
-    element: <div>Hello World</div>,
-  },
-  {
-    path: "search-params",
-    element: <SearchParamPage />,
-    loader: SearchParamPage.loader,
-  },
-]);
+    basename: "/rr7_docusaurus", // <--- THIS is the key for GitHub Pages
+  }
+);
 
 const root = document.getElementById("root")!;
 
